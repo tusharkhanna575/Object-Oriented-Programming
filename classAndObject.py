@@ -15,9 +15,6 @@ class Employee:
     
     def setSalary(self, salary):
         self.__salary = salary
-
-    def getSalary(self):
-        return self.__salary
     
     def getName(self):
         return self.employee_name

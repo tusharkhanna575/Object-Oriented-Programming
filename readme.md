@@ -71,11 +71,11 @@ obj.setName("Tushar")
 obj.setId("abc1234")
 obj.setSalary("7 crore")
 
-print(f"Id: {obj.getId()}, Name: {obj.getName()}, Salary: {obj.getSalary}")
+print(f"Id: {obj.getId()}, Name: {obj.getName()}")
 ```
 Output: 
 ```text
-Id: abc1234, Name: Tushar, Salary: 7 crore
+Id: abc1234, Name: Tushar
 ```
 ---
 
