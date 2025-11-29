@@ -142,6 +142,8 @@ flowchart TD;
     Types_of_Contructor-->Parameterized;
     Types_of_Contructor-->Non-Parameterized;
     Types_of_Contructor-->Copy;
+    Copy-->Deep_Copy;
+    Copy-->Shallow_Copy
 ```
 
 ```python
@@ -171,3 +173,69 @@ Default values initialized by constructor
 Employee Name: Tushar Khanna
 Salary: Rs.50000
 ```
+
+1. **Non - Parameterized Constructor:** A constructor which does not take any arguments as the input
+
+```python
+class Employee:
+    def __init__(self):
+        print("Employee created!")
+```
+
+2. **Parameterized Constructor:** It is a type of constructor that accepts arguments to initialize attributes with specific values
+
+```python
+class Employee:
+    def __init__(self, name, salary):
+        self.employeeName = name
+        self.salary = salary
+
+if __name__ == "__main__":
+    obj = Employee("Tushar", "7 crore")
+    print(f"Name: {obj.employeeName}")
+    print(f"Salary: Rs.{obj.salary}") 
+```
+
+Output:
+```text
+Name: Tushar
+Salary: Rs.7 crore
+```
+
+3. **Copy Constructor:** It enables the programmer to create a new object by copying the attribute of an existing object. The purpose of a copy constructor is to create a deep or shallow copy of an object depending on the requirements.
+```python
+class Employee:
+    def __init__(self, name, salary):
+        self.employeeName = name
+        self.salary = salary
+
+# Shallow Copy
+emp1 = Employee("Tushar", 50000)
+emp2 = emp1  # Both reference the same object
+
+emp2.salary = 60000
+print(emp1.salary)  # Output: 60000 (original affected)
+
+# Deep Copy
+import copy
+emp3 = Employee("Tushar", 50000)
+emp4 = copy.deepcopy(emp3)  # Independent copy
+
+emp4.salary = 60000
+print(emp3.salary)  # Output: 50000 (original unchanged)
+```
+Output:
+```text
+60000
+50000
+```
+
+| Parameter | Shallow Copy | Deep Copy |
+|:-:|:-:|:-:|
+| **Memory Sharing** | Shares memory locations with the original object | Creates an independent copy with separate memory locations |
+| **Performance** | Faster and more efficient, especially for large objects | Slower and may consume more memory |
+| **Data Integrity** | May lead to unintended modifications | Ensures data integrity by isolating the copied object |
+| **Changes to Copied Object** | Modifications affect the original object and vice versa | Modifications do not affect the original object |
+| **Dependencies and References** | Shared references can cause unintended side effects | Handles circular references and complex interdependencies |
+---
+
