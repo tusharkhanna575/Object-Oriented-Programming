@@ -239,3 +239,34 @@ Output:
 | **Dependencies and References** | Shared references can cause unintended side effects | Handles circular references and complex interdependencies |
 ---
 
+#### Constructor Chaining
+- In python, Constructor Chaining primarily refers to the process of ensuring that when a subclass object is initialized, the constructors of its parent classes are also properly called. 
+- This ensures that all inherited attributes and behaviors are correctly set up.
+- Python utilizes the `super()` function for constructor chaining in inheritance. When you define an `__init__` method (the constructor) in a subclass, it's crucial to explicitly call the `__init__` method of the parent class(es) using `super().__init__()`.
+- Python supports multiple inheritance, so `super()` isn’t just “call my parent’s constructor”. It follows something called the **MRO (Method Resolution Order)**—a linear order Python computes to avoid chaos.
+
+```python
+class Animal:
+    def __init__(self, name):
+        self.name = name
+        print("Animal constructor")
+
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name)      # constructor chaining happens here
+        self.breed = breed
+        print("Dog constructor")
+
+d = Dog("Buddy", "Labrador")
+```
+Output:
+```text
+Animal constructor
+Dog constructor
+```
+
+---
+
+#### Constructor Overloading
+
+---
