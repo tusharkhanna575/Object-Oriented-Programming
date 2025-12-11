@@ -351,7 +351,7 @@ Polymorphism-->Compile_Time
 Run_Time-->Virtual_Functions
 Run_Time-->Function_Overriding
 Compile_Time-->Function_Overloading
-Complie_Time-->Method_Overloading
+Compile_Time-->Method_Overloading
 ```
 
 1. **Encapsulation**: 
