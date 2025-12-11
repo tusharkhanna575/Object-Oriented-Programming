@@ -328,3 +328,33 @@ class Employee:
 - Java-style constructor overloading often hides why an object exists. Python prefers to say it out loud.
 ---
 
+### OOP's Principles
+
+```mermaid
+flowchart TD;
+OOP's_Principles-->Encapsulation
+OOP's_Principles-->Abstraction
+OOP's_Principles-->Inheritance
+OOP's_Principles-->Polymorphism
+Encapsulation-->Public
+Encapsulation-->Private
+Encapsulation-->Protected
+Abstraction-->Data
+Abstraction-->Process
+Inheritance-->Single
+Inheritance-->Multiple
+Inheritance-->Multilevel
+Inheritance-->Hierarchical
+Inheritance-->Hybrid
+Polymorphism-->Run_Time
+Polymorphism-->Compile_Time
+Run_Time-->Virtual_Functions
+Run_Time-->Function_Overriding
+Compile_Time-->Function_Overloading
+Complie_Time-->Method_Overloading
+```
+
+1. **Encapsulation**: 
+2. **Abstraction**: 
+3. **Inheritance**: 
+4. **Polymorphism**: 
